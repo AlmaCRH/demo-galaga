@@ -1,7 +1,7 @@
 console.log("ola");
 
 let board = document.getElementById("canvas");
-
+console.log("conflicto")
 let player = new Player(225, 750);
 let enemy = new Enemy(255, 0);
 
