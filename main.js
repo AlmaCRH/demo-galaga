@@ -19,7 +19,6 @@ function createEnemy() {
     enemyArray.push(enemy)
 }
 
-
 function startGame() {
     player.insertPlayer()
     timerMovePlayer = setInterval(() => player.move(), 10)
