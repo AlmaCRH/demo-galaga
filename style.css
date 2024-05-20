@@ -10,3 +10,8 @@
   background-color: blue;
   position: absolute;
 }
+
+.enemy {
+  background-color: red;
+  position: absolute;
+}

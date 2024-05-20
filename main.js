@@ -3,9 +3,11 @@ console.log("Hola");
 let board = document.getElementById("canvas");
 
 let player = new Player(225, 750);
+let enemy = new Enemy(255, 0);
 
 function startGame() {
   player.insertPlayer();
+  enemy.insertEnemy();
   timeMovePlayer = setInterval(() => player.move(), 5);
 }
 
