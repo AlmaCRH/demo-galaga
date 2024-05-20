@@ -1,29 +1,54 @@
-console.log("ola");
+let board = document.getElementById('canvas')
+let screen = document.getElementById('start')
+let button = document.getElementById('start-button')
+//Player
+let player = new Player(400, 550)
+let timerMovePlayer
 
-let board = document.getElementById("canvas");
-console.log("ola");
-let player = new Player(225, 750);
-let enemy = new Enemy(255, 0);
+//Enemy
+let enemyArray = []
 
-function startGame() {
-  player.insertPlayer();
-  enemy.insertEnemy();
-  timeMovePlayer = setInterval(() => player.move(), 5);
+let timerCreateEnemy
+
+let bullet
+
+function createEnemy() {
+    let randomCoordX = Math.floor(Math.random() * 10) * 80
+    let enemy = new Enemy(randomCoordX, 0) 
+    enemy.insertEnemy()
+    enemyArray.push(enemy)
 }
 
-window.addEventListener("keydown", function (event) {
-  switch (event.key) {
-    case "a":
-      player.direction = -1;
-      break;
-    case "d":
-      player.direction = 1;
-      break;
-  }
-});
 
-window.addEventListener("keyup", function (event) {
-  player.direction = 0;
-});
+function startGame() {
+    player.insertPlayer()
+    timerMovePlayer = setInterval(() => player.move(), 10)
+    timerCreateEnemy = setInterval(() => createEnemy(), 1800)
+}
 
-startGame();
+//Key Listener
+window.addEventListener('keydown', function (e) {
+    switch (e.key) {
+        case 'a':
+            player.direction = -1
+            break
+        case 'd':
+            player.direction = 1
+            break
+        case 'w':
+            bullet = new Bullet(enemyArray)
+            bullet.insertBullet() 
+            break
+    }
+})
+
+window.addEventListener('keyup', function (e) {
+    player.direction = 0
+})
+
+button.addEventListener("click",() => {
+    console.log("Press")
+    board.style.display = "block"
+    screen.style.display= "none"
+    startGame()
+})

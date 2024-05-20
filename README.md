@@ -1,1 +1,1 @@
-# demo-galaga
+# Galaga

@@ -1,17 +1,41 @@
-#canvas {
-  width: 500px;
-  height: 800px;
-  background-color: black;
-  position: relative;
-  margin: 0 auto;
+body{
+    margin: 0,auto;
+    display: flex;
+    justify-content: center;
+}
+#canvas{
+    display: none;
+    background-color: black;
+    width:800px;
+    height:600px ;
+    position: relative;
+}
+#player{
+    background-color: blueviolet;
+    position: absolute;
 }
 
-#player {
-  background-color: blue;
-  position: absolute;
+#enemy{
+background-color: red;
+position: absolute;
 }
 
-.enemy {
-  background-color: red;
-  position: absolute;
+.bullet{
+    background-color: rgb(138, 178, 19);
+    position: absolute;
+}
+
+#start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: crimson;
+     width:800px;
+    height:600px ;
+
+}
+
+button{
+    width: 50px;
+    height: 20px;
 }
