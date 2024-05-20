@@ -1,4 +1,4 @@
-console.log("Hola");
+console.log("ola");
 
 let board = document.getElementById("canvas");
 
