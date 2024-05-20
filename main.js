@@ -1,14 +1,18 @@
-console.log("ola");
 
 let board = document.getElementById("canvas");
-console.log("ola");
+//Player
 let player = new Player(225, 750);
+let timeMovePlayer
+//Enemy
 let enemy = new Enemy(255, 0);
+let timeMoveEnemy
+
 
 function startGame() {
   player.insertPlayer();
   enemy.insertEnemy();
   timeMovePlayer = setInterval(() => player.move(), 5);
+  timeMoveEnemy = setInterval(() => enemy.move(), 5);
 }
 
 window.addEventListener("keydown", function (event) {

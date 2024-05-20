@@ -6,7 +6,7 @@ class Player {
     this.height = 50;
     this.sprite = document.createElement("div");
     this.direction = 0;
-    this.speed = 5;
+    this.speed = 2;
   }
 
   insertPlayer() {
